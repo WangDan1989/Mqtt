@@ -16,7 +16,7 @@
 
 - (void)pushTopic {
     [_session publishData:[@"Sample Data" dataUsingEncoding:NSUTF8StringEncoding]
-                     onTopic:@"/Topic"
+                  onTopic:@"/SH/S2H/SpO2083205"
                       retain:YES
                          qos:MQTTQosLevelAtLeastOnce
               publishHandler:^(NSError *error){
@@ -27,6 +27,13 @@
                   }
               }];
 }
+
+- (void)deleteTopic {
+    [_session unsubscribeTopic:@"/SH/S2H/SpO2083205" unsubscribeHandler:^(NSError *error) {
+        
+    }];
+}
+
 
 #pragma mark - MQTTSessionDelegate -
 
@@ -53,16 +60,17 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    NSLog(@"application:didFinishLaunchingWithOptions:");
     
     MQTTCFSocketTransport *transport = [[MQTTCFSocketTransport alloc] init];
-    transport.host = @"URL";
+    transport.host = @"";
     transport.port = 1883;
     _session = [[MQTTSession alloc] init];
     _session.transport = transport;
     _session.delegate = self;
     [_session connectAndWaitTimeout:10];
 
-    [_session subscribeToTopic:@"/Topic" atLevel:MQTTQosLevelAtLeastOnce subscribeHandler:^(NSError *error, NSArray<NSNumber *> *gQoss){
+    [_session subscribeToTopic:@"/SH/S2H/SpO2083205" atLevel:MQTTQosLevelAtLeastOnce subscribeHandler:^(NSError *error, NSArray<NSNumber *> *gQoss){
         if (error) {
             NSLog(@"Subscription failed %@", error.localizedDescription);
         } else {

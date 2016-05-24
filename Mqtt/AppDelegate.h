@@ -18,6 +18,6 @@
 @property (nonatomic, strong) MQTTSession *session;
 
 - (void)pushTopic;
-
+- (void)deleteTopic;
 @end
 

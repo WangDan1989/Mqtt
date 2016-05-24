@@ -146,6 +146,7 @@
 				TargetAttributes = {
 					5A071A2F1CE9AC820010D87F = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 53PCLB9562;
 					};
 				};
 			};
@@ -342,7 +343,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Mqtt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Mqtt;
+				PRODUCT_BUNDLE_IDENTIFIER = wangdan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -355,7 +356,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Mqtt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Mqtt;
+				PRODUCT_BUNDLE_IDENTIFIER = wangdan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
